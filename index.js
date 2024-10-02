@@ -33,6 +33,13 @@ app.use('/api/fuel-price', require('./routes/fuelPrice'))
 app.use('/api/sale-fuel', require('./routes/saleFuel'))
 app.use('/api/procedures', require('./routes/procedures'));
 app.use('/api/closing', require('./routes/closing'));
+app.get('/api/prueba', (req, res) => {
+        res.send(`<html>
+                    <body>
+                        <h1 style="color:blue;text-align: center;margin-top: 100px;"> [Version ${version}]: This is AMAZING!!! </h1>
+                    </body>
+                   </html>`);
+})
 
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
