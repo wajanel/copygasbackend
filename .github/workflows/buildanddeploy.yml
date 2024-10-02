@@ -21,6 +21,8 @@ jobs:
     - name: Deploy to EC2
       run: |
         ssh -o StrictHostKeyChecking=no ubuntu@ec2-100-26-202-84.compute-1.amazonaws.com "
+          export NVM_DIR=~/.nvm
+          source ~/.nvm/nvm.sh
           cd /home/ubuntu/copygasbackend && \
           git pull origin main && \
           pm2 restart gasapp
